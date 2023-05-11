@@ -21,9 +21,9 @@ if(UNIX)
 
 	# For leak-checking and profiling, add '-pg' to CXX flags
 	# set(CMAKE_CXX_FLAGS "-Wall -pg -std=c++11 -O2")
-	# valgrind --leak-check=full ./demo
-	# ./demo # creates cmon.out
-	# gprof demo gmon.out > analysis.txt
+	# valgrind --leak-check=full ./start
+	# ./start # creates cmon.out
+	# gprof start gmon.out > analysis.txt
 endif(UNIX)
 
 if(WIN32)
@@ -73,18 +73,18 @@ add_library(common # ar rcs libcommon.a
 	common/sprite.cpp
 )
 
-# Demo
-add_executable(demo # g++ demo/demo.cpp -o demo
-	demo/demo.cpp
+# Start
+add_executable(start # g++ start/demo.cpp -o start
+	start/demo.cpp
 )
-target_link_libraries(demo # g++ -lcommon
+target_link_libraries(start # g++ -lcommon
 	common
 	${ALL_GRAPHICS_LIBS}
 )
 # Copy assets and shaders to the build directory
 # (In Visual Studio, copy these directories to either 'Release' or 'Build')
 file(
-	COPY demo/assets
+	COPY start/assets
 	DESTINATION ${CMAKE_BINARY_DIR}
 )
 file(
