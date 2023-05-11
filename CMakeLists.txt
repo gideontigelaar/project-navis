@@ -1,6 +1,6 @@
 # CMake entry point
 cmake_minimum_required (VERSION 3.1)
-project (MyFramework)
+project (Navis)
 
 if( CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR )
 	message( FATAL_ERROR "Please select another Build Directory ! (and give it a clever name, like 'build')" )
@@ -63,19 +63,27 @@ set(ALL_GRAPHICS_LIBS
 
 # Common (libcommon.a)
 add_library(common # ar rcs libcommon.a
-	common/camera.h
 	common/camera.cpp
-	common/renderer.h
+	common/camera.h
+	common/entity.cpp
+	common/entity.h
 	common/renderer.cpp
-	common/scene.h
+	common/renderer.h
+	common/resourcemanager.cpp
+	common/resourcemanager.h
 	common/scene.cpp
-	common/sprite.h
+	common/scene.h
 	common/sprite.cpp
+	common/sprite.h
 )
 
 # Start
-add_executable(start # g++ start/demo.cpp -o start
-	start/demo.cpp
+add_executable(start # g++ start/main.cpp -o start
+	start/gamescene.cpp
+	start/gamescene.h
+	start/main.cpp
+	start/tile.cpp
+	start/tile.h
 )
 target_link_libraries(start # g++ -lcommon
 	common

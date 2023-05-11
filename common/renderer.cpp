@@ -101,9 +101,12 @@ void Renderer::renderScene(Scene* scene)
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	// Render all te sprites
-	for (Sprite* sprite : scene->sprites())
+	for (Entity* entity : scene->Children())
 	{
-		this->renderSprite(sprite);
+		entity->ESprite()->position = entity->position;
+		entity->ESprite()->scale = entity->scale;
+		entity->ESprite()->rotation = entity->rotation;
+		this->renderSprite(entity->ESprite());
 	}
 
 	// Swap buffers
@@ -133,9 +136,9 @@ void Renderer::renderSprite(Sprite* sprite)
 
 	// Bind our texture in Texture Unit 0
 	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, sprite->texture());
+	glBindTexture(GL_TEXTURE_2D, _resMan.GetTexture(sprite->TextureName(), sprite));
 	// Set our "textureSampler" sampler to use Texture Unit 0
-	GLuint textureID  = glGetUniformLocation(_programID, "textureSampler");
+	GLuint textureID = glGetUniformLocation(_programID, "textureSampler");
 	glUniform1i(textureID, 0);
 
 	// 1st attribute buffer : vertices
