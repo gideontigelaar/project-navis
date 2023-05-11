@@ -2,6 +2,7 @@
 #define SPRITE_H
 
 #include <string>
+
 #include <GL/glew.h>
 #include <glm/glm.hpp>
 
@@ -28,7 +29,6 @@ public:
 	GLuint loadTGA();
 
 private:
-
 	void createBuffer();
 
 	GLuint _texture;
@@ -41,4 +41,4 @@ private:
 	std::string _textureName;
 };
 
-#endif /* SPRITE_H */
+#endif

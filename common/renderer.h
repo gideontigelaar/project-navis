@@ -38,4 +38,4 @@ private:
 	ResourceManager _resMan;
 };
 
-#endif /* RENDERER_H */
+#endif

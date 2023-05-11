@@ -2,7 +2,7 @@
 
 Tile::Tile() : Entity()
 {
-    this->AddSprite("assets/kingkong.tga");
+    // this->scale = Vector2(2, 2); //TODO: Fix this, and search a way for vectors to work //glm::vec
 }
 
 Tile::~Tile()

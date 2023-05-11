@@ -3,6 +3,7 @@
 
 #include <map>
 #include <string>
+
 #include <common/sprite.h>
 #include <GL/glew.h>
 
@@ -18,4 +19,4 @@ private:
 	std::map<std::string, Sprite*> _textures;
 };
 
-#endif // !RESOURCEMANAGER_H
+#endif

@@ -6,7 +6,6 @@
 class Tile : public Entity
 {
 public:
-
 	Tile();
 
 	virtual ~Tile();

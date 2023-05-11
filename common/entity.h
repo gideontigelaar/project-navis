@@ -1,7 +1,15 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+// Include standard headers
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <string>
 #include <vector>
+#include <algorithm>
+
+#include <common/config.h>
 #include <common/sprite.h>
 #include <glm/glm.hpp>
 
@@ -30,4 +38,4 @@ protected:
 	std::vector<Entity*> children;
 	Sprite* sprite;
 };
-#endif // !ENTITY_H
+#endif

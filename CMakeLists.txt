@@ -65,6 +65,8 @@ set(ALL_GRAPHICS_LIBS
 add_library(common # ar rcs libcommon.a
 	common/camera.cpp
 	common/camera.h
+	common/core.cpp
+	common/core.h
 	common/entity.cpp
 	common/entity.h
 	common/renderer.cpp
@@ -81,6 +83,8 @@ add_library(common # ar rcs libcommon.a
 add_executable(start # g++ start/main.cpp -o start
 	start/gamescene.cpp
 	start/gamescene.h
+	start/grasstile.cpp
+	start/grasstile.h
 	start/main.cpp
 	start/tile.cpp
 	start/tile.h
