@@ -2,7 +2,7 @@
 
 GrassTile::GrassTile() : Tile()
 {
-    this->AddSprite("assets/rgba.tga");
+    this->AddSprite("assets/tile.tga");
 }
 
 GrassTile::~GrassTile()

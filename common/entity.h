@@ -1,17 +1,17 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
-// Include standard headers
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
 #include <string>
-#include <vector>
 #include <algorithm>
-
-#include <common/config.h>
+#include <vector>
 #include <common/sprite.h>
+#include <common/config.h>
 #include <glm/glm.hpp>
+#include <common/inputmanager.h>
+#include <common/navisconfig.h>
 
 class Entity
 {
@@ -23,7 +23,11 @@ public:
 
 	void AddChild(Entity* e);
 
+	InputManager* input() { return _input; };
+
 	void AddSprite(const std::string& fileName);
+
+	void UpdateSprite();
 
 	std::vector<Entity*> Children() { return children; };
 	Sprite* ESprite() { return sprite; }
@@ -37,5 +41,8 @@ public:
 protected:
 	std::vector<Entity*> children;
 	Sprite* sprite;
+
+private:
+	InputManager* _input = InputManager::input();
 };
 #endif

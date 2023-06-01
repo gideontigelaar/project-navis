@@ -69,6 +69,9 @@ add_library(common # ar rcs libcommon.a
 	common/core.h
 	common/entity.cpp
 	common/entity.h
+	common/inputmanager.cpp
+	common/inputmanager.h
+	common/navisconfig.h
 	common/renderer.cpp
 	common/renderer.h
 	common/resourcemanager.cpp

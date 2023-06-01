@@ -1,17 +1,21 @@
 #ifndef CORE_H 
 #define CORE_H
 
+// Include GLEW
 #include <GL/glew.h>
+
+// Include GLFW
 #include <GLFW/glfw3.h>
 
 #include <common/config.h>
 #include <common/renderer.h>
 #include <common/camera.h>
+#include <common/inputmanager.h>
 
 class Core 
 { 
 public: 
-    Core();
+    Core(); 
     virtual ~Core();
 
 	void Run(Scene* scene);
@@ -20,6 +24,7 @@ public:
 
 private:
 	Renderer renderer;
+	InputManager* _inMan = InputManager::input();
 	bool running;
 }; 
 

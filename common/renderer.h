@@ -16,7 +16,8 @@ public:
 	virtual ~Renderer();
 
 	void renderScene(Scene* scene);
-	void renderSprite(Sprite* sprite);
+	void renderEntity(Entity* entity, glm::mat4 PaMa);
+	void renderSprite(Sprite* sprite, glm::mat4 MVP);
 	GLFWwindow* window() { return _window; };
 
 	float updateDeltaTime();
@@ -36,6 +37,9 @@ private:
 	Camera* _camera; // reference to scene->camera
 
 	ResourceManager _resMan;
+
+	glm::mat4 _viewMatrix;
+	glm::mat4 _projectionMatrix;
 };
 
 #endif

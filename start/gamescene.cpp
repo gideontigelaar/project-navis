@@ -30,8 +30,8 @@ GameScene::GameScene() : Scene()
 			
 			if (tile != nullptr)
 			{
-				// tile->position = Vector2(x * 64, y * 64);
-				tile->position = glm::vec3(400.0f, 300.0f, 0.0f);
+				tile->position = glm::vec3(x * 64, y * 64, 0);
+
 				this->AddChild(tile);
 			}
 		}
