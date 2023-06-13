@@ -11,7 +11,7 @@
 #include <common/config.h>
 #include <glm/glm.hpp>
 #include <common/inputmanager.h>
-#include <common/navisconfig.h>
+#include <common/navisconfigg.h>
 
 class Entity
 {
@@ -22,6 +22,8 @@ public:
 	virtual void update(float deltaTime) = 0;
 
 	void AddChild(Entity* e);
+
+	void RemoveChild(Entity* e);
 
 	InputManager* input() { return _input; };
 
