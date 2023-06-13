@@ -11,7 +11,7 @@
 #include <common/config.h>
 #include <glm/glm.hpp>
 #include <common/inputmanager.h>
-#include <common/navisconfigg.h>
+#include <common/navisconfig.h>
 
 class Entity
 {

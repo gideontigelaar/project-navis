@@ -74,6 +74,8 @@ add_library(common # ar rcs libcommon.a
 	common/navisconfig.h
 	common/renderer.cpp
 	common/renderer.h
+	common/timer.cpp
+	common/timer.h
 	common/resourcemanager.cpp
 	common/resourcemanager.h
 	common/scene.cpp
@@ -89,6 +91,8 @@ add_executable(start # g++ start/main.cpp -o start
 	start/grasstile.cpp
 	start/grasstile.h
 	start/main.cpp
+	start/player.cpp
+	start/player.h
 	start/tile.cpp
 	start/tile.h
 )
