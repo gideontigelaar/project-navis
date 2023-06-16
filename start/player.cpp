@@ -2,6 +2,7 @@
 
 Player::Player() : Entity()
 {
+    this->AddSprite("assets/player.tga");
 }
 
 Player::~Player()

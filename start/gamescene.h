@@ -5,6 +5,7 @@
 
 #include "grasstile.h"
 #include "tile.h"
+#include "player.h"
 
 class GameScene : public Scene
 {
@@ -15,10 +16,12 @@ public:
 
 	virtual void update(float deltaTime);
 
-    const int gridWidth = 16;
+    const int gridWidth = 17;
     const int gridHeight = 13;
 
 	std::vector<std::vector<Tile*>> grid;
+
+	Player* player;
 
 private:
 };

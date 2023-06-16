@@ -4,6 +4,9 @@
 
 #include "gamescene.h"
 
+// #include "external/glfw-3.3/src/internal.h"
+// #include "external/glfw-3.3/src/internal.h"
+
 GameScene::GameScene() : Scene()
 {
 	for (int y = 0; y < gridHeight; y++)
@@ -36,6 +39,10 @@ GameScene::GameScene() : Scene()
 			}
 		}
 	}
+
+	player = new Player();
+	player->position = glm::vec3(64, 64, 0);
+	this->AddChild(player);
 }
 
 GameScene::~GameScene()
@@ -54,4 +61,26 @@ GameScene::~GameScene()
 
 void GameScene::update(float deltaTime)
 {
+	int newX = round(player->position.x / 64);
+	int newY = round(player->position.y / 64);
+
+	if(input()->getKeyDown(KEY_W) && grid[newY - 1][newX] == nullptr)
+	{
+    	player->position.y = (newY - 1) * 64;
+	}
+
+	if(input()->getKeyDown(KEY_S) && grid[newY + 1][newX] == nullptr)
+	{
+    	player->position.y = (newY + 1) * 64;
+	}
+
+	if(input()->getKeyDown(KEY_A) && grid[newY][newX - 1] == nullptr)
+	{
+    	player->position.x = (newX - 1) * 64;
+	}
+
+	if(input()->getKeyDown(KEY_D) && grid[newY][newX + 1] == nullptr)
+	{
+    	player->position.x = (newX + 1) * 64;
+	}
 }
