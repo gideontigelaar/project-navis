@@ -4,9 +4,6 @@
 
 #include "gamescene.h"
 
-// #include "external/glfw-3.3/src/internal.h"
-// #include "external/glfw-3.3/src/internal.h"
-
 GameScene::GameScene() : Scene()
 {
 	for (int y = 0; y < gridHeight; y++)

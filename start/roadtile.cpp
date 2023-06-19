@@ -2,7 +2,7 @@
 
 RoadTile::RoadTile() : Tile()
 {
-    this->AddSprite("assets/tile.tga");
+    this->AddSprite("assets/roadtile.tga");
 }
 
 RoadTile::~RoadTile()

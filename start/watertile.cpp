@@ -2,7 +2,7 @@
 
 WaterTile::WaterTile() : Tile()
 {
-    this->AddSprite("assets/tile.tga");
+    this->AddSprite("assets/watertile.tga");
 }
 
 WaterTile::~WaterTile()
