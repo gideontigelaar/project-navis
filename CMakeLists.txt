@@ -93,8 +93,12 @@ add_executable(start # g++ start/main.cpp -o start
 	start/main.cpp
 	start/player.cpp
 	start/player.h
+	start/roadtile.cpp
+	start/roadtile.h
 	start/tile.cpp
 	start/tile.h
+	start/watertile.cpp
+	start/watertile.h
 )
 target_link_libraries(start # g++ -lcommon
 	common
