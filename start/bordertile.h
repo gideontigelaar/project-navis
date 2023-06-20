@@ -1,16 +1,18 @@
-#ifndef GRASSTILE_H
-#define GRASSTILE_H
+#ifndef BORDERTILE_H
+#define BORDERTILE_H
 
 #include "tile.h"
 
-class GrassTile : public Tile
+class BorderTile : public Tile
 {
 public:
-	GrassTile();
+	BorderTile();
 
-	virtual ~GrassTile();
+	virtual ~BorderTile();
 
 	virtual void update(float deltaTime);
+
+	bool isWalkable = false;
 
 private:
 };

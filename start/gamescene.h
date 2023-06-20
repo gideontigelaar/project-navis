@@ -3,9 +3,12 @@
 
 #include <common/scene.h>
 
+#include "bordertile.h"
 #include "grasstile.h"
+#include "roadtile.h"
 #include "tile.h"
 #include "player.h"
+#include "watertile.h"
 
 class GameScene : public Scene
 {
