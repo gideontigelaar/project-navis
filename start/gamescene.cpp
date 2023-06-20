@@ -59,7 +59,7 @@ GameScene::GameScene() : Scene()
 	}
 
 	player = new Player();
-	player->position = glm::vec3(64, 64, 0);
+	player->position = glm::vec3(512, 704, 0);
 	this->AddChild(player);
 }
 
