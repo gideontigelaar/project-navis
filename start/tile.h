@@ -14,6 +14,8 @@ public:
 
 	bool isWalkable;
 
+	bool isBorderTile;
+
 private:
 };
 

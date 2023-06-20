@@ -77,28 +77,61 @@ GameScene::~GameScene()
 	grid.clear();
 }
 
+void GameScene::gameOver()
+{
+	std::cout << "Game Over!" << std::endl;
+}
+
 void GameScene::update(float deltaTime)
 {
 	int newX = round(player->position.x / 64);
 	int newY = round(player->position.y / 64);
 
-	if(input()->getKeyDown(KEY_W) && grid[newY - 1][newX]->isWalkable == true)
+	if(input()->getKeyDown(KEY_W))
 	{
-    	player->position.y = (newY - 1) * 64;
+		if(grid[newY - 1][newX]->isWalkable == true)
+		{
+    		player->position.y = (newY - 1) * 64;
+		}
+		else if(grid[newY - 1][newX]->isBorderTile == false)
+		{
+			gameOver();
+		}
 	}
 
-	if(input()->getKeyDown(KEY_S) && grid[newY + 1][newX]->isWalkable == true)
+	if(input()->getKeyDown(KEY_S))
 	{
-    	player->position.y = (newY + 1) * 64;
+		if(grid[newY + 1][newX]->isWalkable == true)
+		{
+    		player->position.y = (newY + 1) * 64;
+		}
+		else if(grid[newY + 1][newX]->isBorderTile == false)
+		{
+			gameOver();
+		}
 	}
 
-	if(input()->getKeyDown(KEY_A) && grid[newY][newX - 1]->isWalkable == true)
+	if(input()->getKeyDown(KEY_A))
 	{
-    	player->position.x = (newX - 1) * 64;
+		if(grid[newY][newX - 1]->isWalkable == true)
+		{
+			player->position.x = (newX - 1) * 64;
+		}
+		else if(grid[newY][newX - 1]->isBorderTile == false)
+		{
+			gameOver();
+		}
 	}
 
-	if(input()->getKeyDown(KEY_D) && grid[newY][newX + 1]->isWalkable == true)
+	if(input()->getKeyDown(KEY_D))
 	{
-    	player->position.x = (newX + 1) * 64;
+		if(grid[newY][newX + 1]->isWalkable == true)
+		{
+			player->position.x = (newX + 1) * 64;
+		}
+		else if(grid[newY][newX + 1]->isBorderTile == false)
+		{
+			gameOver();
+		}
 	}
 }

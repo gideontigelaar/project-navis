@@ -12,8 +12,6 @@ public:
 
 	virtual void update(float deltaTime);
 
-	bool isWalkable = true;
-
 private:
 };
 

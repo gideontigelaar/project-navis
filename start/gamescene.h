@@ -16,6 +16,8 @@ public:
 	GameScene();
 
 	virtual ~GameScene();
+	
+	virtual void gameOver();
 
 	virtual void update(float deltaTime);
 
