@@ -6,6 +6,7 @@
 #include "bordertile.h"
 #include "grasstile.h"
 #include "roadtile.h"
+#include "car.h"
 #include "tile.h"
 #include "player.h"
 #include "watertile.h"

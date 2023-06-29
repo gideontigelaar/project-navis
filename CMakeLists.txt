@@ -88,6 +88,8 @@ add_library(common # ar rcs libcommon.a
 add_executable(start # g++ start/main.cpp -o start
 	start/bordertile.cpp
 	start/bordertile.h
+	start/car.cpp
+	start/car.h
 	start/gamescene.cpp
 	start/gamescene.h
 	start/grasstile.cpp
